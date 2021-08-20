@@ -19,4 +19,4 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'us-east-1'   # optional: defaults to us-east-1
         SOURCE_DIR: './www'       # only the www files
-        DEST_DIR: '/'             # to the root of the bucket
+        DEST_DIR: ''              # to the root of the bucket
