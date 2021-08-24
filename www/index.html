@@ -14,16 +14,25 @@
     </body>
 
     <script> 
-
+        var counter = document.getElementById("cntr");
         var xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function () {
+            if (this.readyState != 4) return;
+
+            if (this.status == 200) {
+                var data = JSON.parse(this.responseText);
+                counter.innerHTML = data.count;
+            }
+
+            // end of state change: it can be after some time (async)
+        };
+
         xhr.open("POST", "https://hfij7kp2dc.execute-api.us-east-1.amazonaws.com/site/api/pagecounter", true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({
             page: "index.html"
         }));
 
-        var counter = document.getElementById("cntr");
-
-        counter.innerHTML = xhr;
     </script>
 </html>
