@@ -7,7 +7,7 @@
     </head>
 
     <body>
-        <p>Page Views: <span id="cntr">0</span></p>
+        <p>Page Views: <span id="cntr"></span></p>
         <h1>Daniel Shiplett's Cloud Resume</h1>
         <h2>What Is This?</h2>
         <p>The future site of my cloud resume as dictated by <a href="https://cloudresumechallenge.dev/">The Cloud Resume Challenge</a>.</p>
@@ -24,8 +24,6 @@
                 var data = JSON.parse(this.responseText);
                 counter.innerHTML = data.count;
             }
-
-            // end of state change: it can be after some time (async)
         };
 
         xhr.open("POST", "https://hfij7kp2dc.execute-api.us-east-1.amazonaws.com/site/api/pagecounter", true);
